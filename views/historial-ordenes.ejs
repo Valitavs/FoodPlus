@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/historial-ordenes.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="section-add">
+        <div class="title-x">
+            <h1>Historial de pedidos aceptados</h1>
+        </div>
+        <div class="contenedormenu">
+            <%results.forEach((user)=>{%>
+                <%var p = 0%>
+                <%function suma(){%>
+                    <%p=p+1%>
+                    <%return p%>
+                <%}%>
+                <%if(user.estado_orden == "Aceptado"){%>
+                <div class="elemento2">
+                    <img src="/uploads/<%- user.imguser_orden %>" alt="">
+                    <div class="descrip-menu2">
+                        <h1>Pedido <%= suma() %></h1>
+                        <h2>informacion: <%- user.nombremenu_orden %></h1>
+                        <h2>Direccion: <%- user.direccion_orden %></h2>
+                        <h2>Nombre: <%- user.nombrecliente_orden %></h2>
+                        <h2>Precio: <%- user.precio_orden %></h2>
+                        <h2>Telefono: <%- user.telefono_orden %></h2>
+                    </div>
+                </div>
+                <%}%>
+            <%})%>
+            
+        </div>
+        <div class="cerrar2">
+            <a class="cerrar" href="/">Cerrar</a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/menuOp1.css">
+<body>
+    <div class="ventanamenu">
+        <h1 class="titlemenu">Elementos del menu</h1>
+        <div class="contenedormenu">
+            <% results.forEach((usuario)=>{%>
+                <div class="elemento">
+                    <img src="uploads/<%- usuario.img_menu %>" alt="">
+                    <div class="descrip-menu">
+                        <h1><%- usuario.nombre_menu %></h1>
+                        <h2><%- usuario.descripcion_menu %></h1>
+                        <h3>$<%- usuario.precio_menu %></h1>
+                    </div>
+                    <div class="button-elemento">
+                        <a href="/edit/<%- usuario.idmenu %>">Editar</a>
+                        <a href="/delete/<%- usuario.idmenu %>">Borrar</a>
+                    </div>
+                </div>
+            <%})%>
+        </div>
+        <div class="cont-button"></div>
+        <a class="button-add" href="/Agregar">Agregar producto</a>
+    </div>
+
+    
+</body>
+<script src="/js/config-res.js"></script>
+</html>

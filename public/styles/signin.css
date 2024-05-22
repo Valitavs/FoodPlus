@@ -1,0 +1,192 @@
+body{
+    display: flex;
+    margin: 0;
+}
+
+@font-face{
+    font-family: Inter-Thin;
+    src: url(/static/Inter-Thin.ttf);
+}
+@font-face{
+    font-family: Inter-Regular;
+    src: url(/static/Inter-Regular.ttf);
+}
+@font-face{
+    font-family: Inter-Medium;
+    src: url(/static/Inter-Medium.ttf);
+}
+@font-face{
+    font-family: Abhaya-Regular;
+    src: url(/static/RomanSerif.ttf);
+}
+@font-face{
+    font-family: Inter-Bold;
+    src: url(/static/Inter-Bold.ttf);
+}
+
+.imagen-over .imagen{
+    width: 60vw;
+    height: 100vh;
+    background-image: url(/Imagenes/pexels-karolina-grabowska-7283717.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.imagen-over .imagen:before{
+    content: "";
+    width: 60vw;
+    height: 100vh;
+    position: absolute;
+    background: linear-gradient(0deg, #D92525 10%, #ff7878ab 37%);
+    opacity: 0.7;
+}
+
+.contenedor{
+    width: 40vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .contenido{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.contenido .Volver{
+    display: flex;
+    font-size: 30px;
+    justify-content: right;
+    align-items: center;
+    font-family: Inter-Regular;
+    gap: 5px;
+    padding: 50px 60px 0px 0px;
+    cursor: pointer;
+}
+
+.Volver img{
+    width: 24px;
+    height: 24px;
+}
+
+.contenido h1{
+    font-size: 23px;
+    font-family: Inter-Regular;
+    margin-top: 100px;
+}
+
+.contenido input{
+    display: block;
+    align-items: center;
+    margin: 0 auto;
+    width: 446px;
+}
+
+.input{
+    padding: 10px;
+}
+
+.input label{
+    font-size: 13px;
+    font-family: Inter-Regular;
+    margin-right: 425px;
+}
+
+.input input{
+    width: 446px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 2px solid #c8c8c873;
+    outline: none;
+}
+
+.input2 label{
+    font-size: 13px;
+    font-family: Inter-Regular;
+    margin-right: 405px;
+}
+
+.input2 input{
+    width: 446px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 2px solid #c8c8c873;
+    outline: none;
+}
+
+.input2{
+    padding: 10px;
+}
+
+.contenido .check{
+    display: flex;
+    align-items: center;
+    margin-left: 142px;
+    gap: 5px;
+    font-family: Inter-Regular;
+    font-size: 13px;
+    padding: 0px 0px 10px;
+}
+
+.check input{
+    width: 16px;
+    height: 16px;
+    border: 2px solid #C8C8C8;
+    outline: none;
+    margin: 0;
+}
+
+.contenido button{
+    width: 470px;
+    padding: 11px;
+    background: linear-gradient(90deg, #D92525, #ff7878);
+    color: #fff;
+    border: none;
+    font-family: Inter-Medium;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.contenido .o-inicio{
+    font-size: 16px;
+    margin: 0;
+    font-family: Inter-Thin;
+    padding: 60px 0px 30px;
+}
+
+.contenido .registro{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 20px;
+}
+
+.registro .No-registro{
+    font-size: 16px;
+    font-family: Inter-Thin;
+    margin: 0;
+}
+
+.registro .regis{
+    font-size: 16px;
+    font-family: Inter-Thin;
+    color: #D92525;
+    margin: 0;
+}
+
+.registro a{
+    text-decoration: none;
+}
+
+.logos img{
+    padding: 5px;
+}
+
+.link1{
+    color: black;
+    text-decoration: none;
+}

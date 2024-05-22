@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/edit-menu.css">
+    <title>Document</title>
+</head>
+<body>
+    <% if (usuario) {%>
+    <div class="section-add">
+        <div class="title-x">
+            <h1>Editar producto</h1>
+        </div>
+        <form class="forminfo" action="/update" method="POST" enctype="multipart/form-data">
+            <input id="idmenu", name="idmenu" value="<%=usuario.idmenu %>" hidden>
+            <div class="input-1">
+                <label for="nombreproduct" class="form-label">Nombre de producto</label>
+                <input type="text" class="form-control" id="nombreproduct" name="nombre_menu">
+            </div>
+            <div class="input-2">
+                <label for="descproduct" class="form-label">Descripción de producto</label>
+                <textarea class="form-control" id="descproduct" rows="3" name="descripcion_menu"></textarea>
+            </div>
+            <div class="input-1">
+                <label for="precioproduct" class="form-label">Precio de producto</label>
+                <input type="text" class="form-control" style="width: 200px;" id="precioproduct" name="precio_menu">
+            </div>
+            <div class="input-1">
+                <label for="image">Imagen de producto</label>
+                <input type="file" id="image" name="image">
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="agregar-menu" type="submit">Guardar cambios</button>
+                <a class="cerrar" href="/Restaurante/%20<%=usuario.idres_menu %>/%20<%=usuario.iduser_menu %>">Cerrar</a>
+            </div>
+            
+        </form>
+    </div>
+    <% } %>
+</body>
+</html>

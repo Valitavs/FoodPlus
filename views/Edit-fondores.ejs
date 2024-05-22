@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/add-res.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <% if (usuario) {%>
+    <div class="section-add">
+        <div class="title-x">
+            <h1>Cambiar fondo de pagina</h1>
+        </div>
+        <form class="forminfo" action="/updatefondores" method="POST" enctype="multipart/form-data">
+            <input id="idrestaurantes", name="idrestaurantes" value="<%=usuario.idrestaurantes %>" hidden>
+            <div class="input-1">
+                <label for="image">Fondo</label>
+                <input type="file" id="image" name="image">
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="agregar-menu" type="submit">Agregar</button>
+                <a class="cerrar" href="/Restaurante/%20<%=usuario.idrestaurantes %>/%20<%=usuario.iduser_res %>">Cerrar</a>
+            </div>
+        </form>
+    </div>
+    <% } %>
+</body>
+
+</html>

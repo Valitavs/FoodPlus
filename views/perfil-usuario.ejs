@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Perfil</title>
+    <link rel="stylesheet" href="/styles/perfil-usuario.css">
+    <link rel="shorcut icon" href="/imagenes/restaurante.png" type="image/x-icon">
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">-->
+    <!--DATA-TABLES-->
+    <!--<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap5.css" />-->
+
+    <!--CDNJS-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+</head>
+
+<body>
+    <!--INICIO-SECCION NAVBAR HEADER====================================================================================-->
+
+    <header>
+        <div class="container-inicial">
+            <img class="icono-correo" src="/imagenes/correo-electronico.png" alt="icono-correo">
+            <h5 class="correo-info">info@ejemplo.com</h5>
+            <img class="icono-face-head" src="/imagenes/facebook.png" alt="">
+            <img class="icono-twitter-head" src="/imagenes/twitter.png" alt="">
+            <img class="icono-insta-head" src="/imagenes/instagram.png" alt="">
+            <img class="icono-you-head" src="/imagenes/youtube.png" alt="">
+            <a href="/logout">
+                <h5 class="login">Cerrar sesión</h5>
+            </a>
+        </div>
+        <div class="nav-bar">
+            <a href="/Pagina de inicio/" class="logo">
+                <img src="/imagenes/Logo.png" alt="logoimg">
+            </a>
+            <% if (usuario) {%>
+            <nav class="links">
+                <a href="/Iniciouser" class="nav-link">Inicio</a>
+                <a href="/Blogsuser" class="nav-link">Blogs</a>
+                <a href="/Restaurantesuser" class="nav-link">Restaurantes</a>
+                <ul class="menu">
+                    <li>
+                        <a href="/Blogs" class="nav-link">
+                            Paginas
+                            <img class="flecha-abajo" src="./imagenes/flecha-hacia-abajo-para-navegar.png" alt=""></img>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="">Contacto</a></li>
+                            <li><a href="">Terminos y condiciones</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="/perfil/<%- usuario.idusuarios %>">
+                    <img class="img-profile" src="/uploads/<%- usuario.user_img %>" alt="">
+                </a>
+
+                <button class="button-carrito" id="open">
+                    <img class="icono-carrito" src="/imagenes/carrito-de-compras.png" alt="">
+                </button>
+
+            </nav>
+            <% } %>
+        </div>
+    </header>
+
+    <!--FINAL-SECCION NAVBAR HEADER====================================================================================-->
+
+    
+    <section class="perfil">
+        
+        <div class="container-perfil">
+            <% if (usuario) {%>
+            <div class="conainer-img">
+                <div class="figura-red">
+                    <h1>Perfil</h1>
+                </div>
+                <div class="circulo-b">
+                    <img class="imgperfil" src="/uploads/<%- usuario.user_img %>">
+                </div>
+            </div>
+            <a class="buttoadd2" href="/Editarinfouser/<%- usuario.idusuarios %>"><button>Editar</button></a>
+            
+            <div class="info-c">
+                <div class="nombre-c">
+                    <h1>Nombre</h1>
+                    <h2><%- usuario.user_nombre %></h2>
+                </div>
+                <div class="nombre-c">
+                    <div>
+                        <h1>Direccion</h1>
+                    </div>
+                    <h2><%- usuario.user_direccion %></h1>
+                </div>
+                <div class="nombre-c">
+                    <h1>Correo</h1>
+                    <h2><%- usuario.user_correo %></h1>
+                </div>
+                <div class="nombre-c">
+                    <h1>Telefono</h1>
+                    <h2><%- usuario.user_telefono %></h1>
+                </div>
+            </div>
+            <% } %>
+            <div class="publicaciones-u">
+                <h1 class="h1-p">Publicaciones</h1>
+                <div class="post-u">
+                    <img class="imgpost" src="/imagenes/post-1.jpg">
+                    <div class="textpost">
+                        <h1>Lorem ipsum</h1>
+                        <h2>Lorem ipsum dolor sit amet consectetur adipiscing elit turpis cras, hac torquent velit
+                            aliquam luctus sociis dui. Commodo posuere…</h2>
+                    </div>
+                    <div class="reacpost">
+                        <img src="/imagenes/corazon.png">
+                        <h1>584</h1>
+                    </div>
+                </div>
+                <div class="post-u">
+                    <img class="imgpost" src="/imagenes/post-1.jpg">
+                    <div class="textpost">
+                        <h1>Lorem ipsum</h1>
+                        <h2>Lorem ipsum dolor sit amet consectetur adipiscing elit turpis cras, hac torquent velit
+                            aliquam luctus sociis dui. Commodo posuere…</h2>
+                    </div>
+                    <div class="reacpost">
+                        <img src="/imagenes/corazon.png">
+                        <h1>584</h1>
+                    </div>
+                </div>
+                <div class="post-u">
+                    <img class="imgpost" src="/imagenes/post-1.jpg">
+                    <div class="textpost">
+                        <h1>Lorem ipsum</h1>
+                        <h2>Lorem ipsum dolor sit amet consectetur adipiscing elit turpis cras, hac torquent velit
+                            aliquam luctus sociis dui. Commodo posuere…</h2>
+                    </div>
+                    <div class="reacpost">
+                        <img src="/imagenes/corazon.png">
+                        <h1>584</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="Restaurantes-u">
+                <h1 class="nombre-res">Restaurantes</h1>
+                <div class="res-container">
+                    <% res.forEach((user)=>{%>
+                    <div class="cont-cart">
+                        <div class="carta-u">
+                            <div class="img-nomu">
+                                <img src="/uploads/<%- user.icono_res %>" alt="">
+                                <h1><%- user.nombreuser_recomendacion %></h1>
+                            </div>
+                        </div>
+                        <a href="/Restaurante/ <%- user.idrestaurantes %>/ <%- usuario.idusuarios %>"><button>Administrar</button></a>
+                    </div>
+                    <%})%>
+                </div>
+                <a class="buttoadd" href="/Add-res/<%- usuario.idusuarios %>"><button><img src="/imagenes/plus.png" alt=""></button></a>
+            </div>
+            <div class="container-reser">
+                <h1 class="title-reser">Reservaciones</h1>
+                <div>
+                    <% reserva.forEach((reserva)=>{%>
+                        <%y = reserva.fecha_reserva.getFullYear()%>
+                        <%m = reserva.fecha_reserva.getMonth() + 1%>
+                        <%d = reserva.fecha_reserva.getDate()%>
+                    <table>
+                        <tr>
+                            <th>Dia</th>
+                            <th>Mes</th>
+                            <th>Año</th>
+                            <th>Hora</th>
+                            <th>Estado</th>
+                        </tr>
+                        <tr>
+                            <td><%= d %></td>
+                            <td><%= m %></td>
+                            <td><%= y %></td>
+                            <td><%- reserva.hora_reserval %></td>
+                            <%if(reserva.estado_reserva == "Disponible"){%>
+                            <td class="estadotd"><%- reserva.estado_reserva %></td>
+                            <%}else{%>
+                            <td class="estadotd2"><%- reserva.estado_reserva %></td>    
+                            <%}%>
+                        </tr>
+                    </table>
+                    <%})%>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!--INICIO-SECCION FOOTER==================================================================================-->
+
+    <section>
+        <footer class="footer-inicial">
+            <div class="bar-vacia"></div>
+            <div class="footer-info">
+                <div class="footer-info1">
+                    <a href="/Iniciouser"><img src="/imagenes/Logo.png" alt=""></a>
+                    <h6>Lorem ipsum dolor sit amet <br>consectetur adipiscing elit orci <br>porttitor, mattis arcu.</h6>
+                </div>
+                <div class="footer-info2">
+                    <h1>Enlace rápido</h1>
+                    <a href="/Iniciouser"><h6>Inicio</h6></a>
+                    <a href="/Restaurantesuser"><h6>Todos los restaurantes</h6></a>
+                    <a href=""><h6>Contacto</h6></a>
+                    <a href="/Blogsuser"><h6>Detalles del Blog</h6></a>
+                </div>
+                <div class="footer-info3">
+                    <h1>Enlace rápido 2</h1>
+                    <a href=""><h6>Términos y condiciones</h6></a>
+                    <a href=""><h6>Contacto</h6></a>
+                </div>
+                <div class="footer-info4">
+                    <h1>Contacto</h1>
+                    <div>
+                        <img src="/imagenes/maparojo.png" alt="">
+                        <h6>Tr 39 No. 57A-14, C.P 11001</h6>
+                    </div>
+                    <div>
+                        <img src="/imagenes/llamada-telefonica.png" alt="">
+                        <h6>+57 312 587 1547</h6>
+                    </div>
+                    <div>
+                        <img src="/imagenes/correo.png" alt="">
+                        <h6>info@ejemplo.com</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bar-footerinfo">
+                <div class="blogs-textcopy">
+                    <h6 class="text-redcopy">Copyright © 2023 </h6>
+                    <h6 class="text-redcopy2">Yum</h6>
+                    <h6 class="text-redcopy3">. Todos los derechos reservados.</h6>
+                </div>
+                <div class="blogs-iconosfoot">
+                    <a href=""><img class="icono-face-head" src="/imagenes/facebook.png" alt=""></a>
+                    <a href=""><img class="icono-twitter-head" src="/imagenes/twitter.png" alt=""></a>
+                    <a href=""><img class="icono-insta-head" src="/imagenes/instagram.png" alt=""></a>
+                    <a href=""><img class="icono-you-head" src="/imagenes/youtube.png" alt=""></a>
+                </div>
+            </div>
+
+        </footer>
+    </section>
+
+</body>
+
+</html>

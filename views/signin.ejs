@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Inicio de sesión</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/signin.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="imagen-over">
+        <div class="over"></div>
+        <div class="imagen"></div>
+    </div>
+
+    <div class="contenedor">
+        <div class="contenido">
+            <a href="/" class="link1">
+                <div class="Volver">
+                    <img src="/Imagenes/flecha.png" alt="">
+                    <h6>Volver</h6>
+                </div>
+            </a>
+            <h1>Iniciar sesión para continuar</h1>
+            <form action="/save2" method="POST">
+                <div class="input">
+                    <label>Correo</label>
+                    <input type="text" id="correo" name="usercorreo" tabindex="1" >
+                </div>
+                <div class="input2" >
+                    <label>Contraeña</label>
+                    <input type="text" id="pass" name="contraseñauser" tabindex="2">
+                </div>
+                <div class="check">
+                    <input id="activar" type="checkbox" tabindex="3">
+                    <label for="activar">Recordarme</label>
+                </div>
+                <button type="submit">Iniciar sesión</button>
+            </form>
+            <h6 class="o-inicio">o inicia sesión usando</h6>
+            <div class="logos">
+                <img src="/Imagenes/facebook red.png" alt="">
+                <img src="/Imagenes/social.png" alt="">
+                <img src="/Imagenes/gorjeo.png" alt="">
+            </div>
+            <div class="registro">
+                <h6 class="No-registro">¿No tienes cuenta?</h6>
+                <a href="/registro"><h6 class="regis">Resgistrate</h6></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

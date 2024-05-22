@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/add-res.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <% if (usuario) {%>
+    <div class="section-add">
+        <div class="title-x">
+            <h1>Agregar restaurante</h1>
+        </div>
+        <form class="forminfo" action="/saveres" method="POST" enctype="multipart/form-data">
+            <input id="iduser_res", name="iduser_res" value="<%=usuario.idusuarios %>" hidden>
+            <div class="input-1">
+                <label for="nombreres" class="form-label">Nombre de restaurante</label>
+                <input type="text" class="form-control" id="nombreres" name="name_res">
+            </div>
+            <div class="input-1">
+                <label for="horaopen" class="form-label">Hora de apertura</label>
+                <input type="time" class="form-control" style="width: 200px;" id="horaopen" name="hora_open">
+            </div>
+            <div class="input-1">
+                <label for="horaclose" class="form-label">Hora de cierre</label>
+                <input type="time" class="form-control" style="width: 200px;" id="horaclose" name="hora_close">
+            </div>
+            <div class="input-1">
+                <label for="direccionres" class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="direccionres" name="direccion_res">
+            </div>
+            <div class="input-1">
+                <label for="image">Logo de restaurante</label>
+                <input type="file" id="image" name="image">
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="agregar-menu" type="submit">Agregar</button>
+                <a class="cerrar" href="/perfil/<%=usuario.idusuarios %>">Cerrar</a>
+            </div>
+        </form>
+    </div>
+    <% } %>
+</body>
+
+</html>

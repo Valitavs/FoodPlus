@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles/restauranteprofile.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--INICIO-SECCION NAVBAR HEADER====================================================================================-->
+
+    <header>
+        <div class="container-inicial">
+            <img class="icono-correo" src="/imagenes/correo-electronico.png" alt="icono-correo"></img>
+            <h5 class="correo-info">info@ejemplo.com</h5>
+            <img class="icono-face-head" src="/imagenes/facebook.png" alt=""></img>
+            <img class="icono-twitter-head" src="/imagenes/twitter.png" alt=""></img>
+            <img class="icono-insta-head" src="/imagenes/instagram.png" alt=""></img>
+            <img class="icono-you-head" src="/imagenes/youtube.png" alt=""></img>
+            <a href="/signin">
+                <h5 class="login">Iniciar Sesión</h5>
+            </a>
+        </div>
+        <div class="nav-bar">
+            <a href="/" class="logo">
+                <img src="/imagenes/Logo.png" alt="logoimg"></img>
+            </a>
+            <nav class="links">
+                <a href="" class="nav-link">Inicio</a>
+                <a href="" class="nav-link">Contacto</a>
+                <a href="/Restaurantes" class="nav-link">Restaurantes</a>
+                <a href="/registro" class="nav-link">Registrarse</a>
+                <a href="/Blogs" class="nav-link">
+                    Paginas
+                    <img class="flecha-abajo" src="/imagenes/flecha-hacia-abajo-para-navegar.png" alt=""></img>
+                </a>
+
+                <button class="button-carrito" id="open">
+                    <img class="icono-carrito" src="/imagenes/carrito-de-compras.png" alt=""></img>
+                </button>
+
+            </nav>
+        </div>
+    </header>
+
+    <!--FINAL-SECCION NAVBAR HEADER====================================================================================-->
+
+    <section>
+        <% if (usuario) {%>
+        <div class="container-info">
+            
+            <img class="fondo-res" src="/uploads/<%- usuario.fondo_res %>" alt="">
+            <div class="info-res">
+                <div class="cont">
+                    <img class="perfil-res" src="/uploads/<%- usuario.icono_res %>" alt="">
+                    <div class="info2-res">
+                        <div class="iconos-res">
+                            <img src="/imagenes/facebook-res.png" alt="">
+                            <img src="/imagenes/gorjeo-res.png" alt="">
+                            <img src="/imagenes/instagram-res.png" alt="">
+                        </div>
+                        <h1><%- usuario.name_res %></h1>
+                        <div class="estrellas">
+                            <img src="/imagenes/estrella.png" alt="">
+                            <img src="/imagenes/estrella.png" alt="">
+                            <img src="/imagenes/estrella.png" alt="">
+                            <img src="/imagenes/estrella.png" alt="">
+                            <img src="/imagenes/estrellam.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="horarios">
+                    <div class="horario">
+                        <img src="/imagenes/reloj-de-pared.png" alt="">
+                        <h1><%- usuario.hora_open %> - <%- usuario.hora_close %></h1>
+                    </div>
+                    <div class="horario">
+                        <img src="/imagenes/maparojo.png" alt="">
+                        <h1><%- usuario.direccion_res %></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="contmenu">
+                <div class="menu">
+                    <h1 class="detalles">Todos los detalles</h1>
+                    <div class="linksmenu">
+                        <p data-target="#menu">Menu</p>
+                        <p data-target="#popular">Lo mas vendido</p>
+                        <p data-target="#opiniones">Opiniones</p>
+                        <p data-target="#reservar">Reservar</p>
+                        <p data-target="#administrar">Administrar pedidos</p>
+                    </div>
+                </div>
+                <div class="contenidodinamico" id="contenidodinamico">
+                    <div data-content id="menu" class="active">
+                        <div class="ventanamenu">
+                            <h1 class="titlemenu">Elementos del menu</h1>
+                            <div class="cont-button"></div>
+                            <div class="contenedormenu">
+                                <% res.forEach((user)=>{%>
+                                    <div class="elemento">
+                                        <img src="/uploads/<%- user.img_menu %>" alt="">
+                                        <div class="descrip-menu">
+                                            <h1><%- user.nombre_menu %></h1>
+                                            <h2><%- user.descripcion_menu %></h1>
+                                            <h3>$<%- user.precio_menu %></h1>
+                                        </div>
+                                        <div class="button-elemento">
+                                            <a href="/edit/<%- user.idmenu %>">Ordenar</a>
+                                        </div>
+                                    </div>
+                                <%})%>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-content id="popular">
+                        <div class="ventanamenu">
+                            <h1 class="titlemenu">Los productos mas vendidos</h1>
+                            <div class="cont-button"></div>
+                            <div class="contenedormenu">
+                                <% res.forEach((user)=>{%>
+                                    <div class="elemento">
+                                        <img src="/uploads/<%- user.img_menu %>" alt="">
+                                        <div class="descrip-menu">
+                                            <h1><%- user.nombre_menu %></h1>
+                                            <h2><%- user.descripcion_menu %></h1>
+                                            <h3>$<%- user.precio_menu %></h1>
+                                        </div>
+                                        <div class="button-elemento">
+                                            <a href="/edit/<%- user.idmenu %>">Ordenar</a>
+                                        </div>
+                                    </div>
+                                <%})%>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-content id="opiniones">
+                        <div class="ventanamenu">
+                            <h1 class="titlemenu">Reseñas</h1>
+                            <form action="" class="contenedormenu2">
+                                <div class="input-2">
+                                    <label for="descproduct" class="form-label">Reseña</label>
+                                    <textarea class="form-control" id="descproduct" rows="3" name="descripcion_menu"></textarea>
+                                </div>
+                                <a class="button-add2" href="">Enviar</a>
+                            </form>
+                            <div class="cont-button"></div>
+                            <div class="datosuser">
+                                <img src="/imagenes/usuario.jpg" alt="">
+                                <div class="contnombrefecha">
+                                    <div class="nomfe">
+                                        <h1>Alex Doe</h1>
+                                        <div class="star-com">
+                                            <img src="./imagenes/estrella.png" alt=""></img>
+                                            <img src="./imagenes/estrella.png" alt=""></img>
+                                            <img src="./imagenes/estrella.png" alt=""></img>
+                                            <img src="./imagenes/estrella.png" alt=""></img>
+                                            <img src="./imagenes/estrellam.png" alt=""></img>
+                                        </div>
+                                    </div>
+                                    <h2>Lorem ipsum dolor sit amet consectetur adipiscing elit, maecenas
+
+                                        risus sollicitudin fames natoque ornare elementum pulvinar, 
+                                        
+                                        laoreet mus senectus suscipit taciti dapibus…
+                                        
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-content id="reservar">
+                        <h1>Reservar</h1>
+                    </div>
+
+                    <div data-content id="administrar">
+                        <h1>Administrar</h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </section>
+
+    <!--INICIO-SECCION FOOTER==================================================================================-->
+
+    <section>
+        <footer class="footer-inicial">
+            <div class="bar-vacia"></div>
+            <div class="footer-info">
+                <div class="footer-info1">
+                    <a href="/"><img src="/imagenes/Logo.png" alt=""></img></a>
+                    <h6>Lorem ipsum dolor sit amet <br></br>consectetur adipiscing elit orci <br></br>porttitor, mattis
+                        arcu.</h6>
+                </div>
+                <div class="footer-info2">
+                    <h1>Enlace rápido</h1>
+                    <a href="/">
+                        <h6>Inicio</h6>
+                    </a>
+                    <a href="/Restaurantes">
+                        <h6>Todos los restaurantes</h6>
+                    </a>
+                    <a href="">
+                        <h6>Contacto</h6>
+                    </a>
+                    <a href="">
+                        <h6>Detalles del Blog</h6>
+                    </a>
+                </div>
+                <div class="footer-info3">
+                    <h1>Enlace rápido 2</h1>
+                    <a href="/Signin">
+                        <h6>Inicio de sesión</h6>
+                    </a>
+                    <a href="/Registro">
+                        <h6>Resgistrarse</h6>
+                    </a>
+                    <a href="">
+                        <h6>Términos y condiciones</h6>
+                    </a>
+                </div>
+                <div class="footer-info4">
+                    <h1>Contacto</h1>
+                    <div>
+                        <img src="/imagenes/maparojo.png" alt=""></img>
+                        <h6>Tr 39 No. 57A-14, C.P 11001</h6>
+                    </div>
+                    <div>
+                        <img src="/imagenes/llamada-telefonica.png" alt=""></img>
+                        <h6>+57 312 587 1547</h6>
+                    </div>
+                    <div>
+                        <img src="/imagenes/correo.png" alt=""></img>
+                        <h6>info@ejemplo.com</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bar-footerinfo">
+                <div class="blogs-textcopy">
+                    <h6 class="text-redcopy">Copyright © 2023 </h6>
+                    <h6 class="text-redcopy2">Yum</h6>
+                    <h6 class="text-redcopy3">. Todos los derechos reservados.</h6>
+                </div>
+                <div class="blogs-iconosfoot">
+                    <a href=""><img class="icono-face-head" src="/imagenes/facebook.png" alt=""></img></a>
+                    <a href=""><img class="icono-twitter-head" src="/imagenes/twitter.png" alt=""></img></a>
+                    <a href=""><img class="icono-insta-head" src="/imagenes/instagram.png" alt=""></img></a>
+                    <a href=""><img class="icono-you-head" src="/imagenes/youtube.png" alt=""></img></a>
+                </div>
+            </div>
+
+        </footer>
+    </section>
+    
+</body>
+<script src="/js/config-res.js"></script>
+</html>

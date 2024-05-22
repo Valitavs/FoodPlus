@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pagina de inicio</title>
+    <link rel="stylesheet" href="/styles/inicio-usuario.css">
+    <link rel="shorcut icon" href="/imagenes/restaurante.png" type="image/x-icon">
+</head>
+<body>
+
+
+
+<!--INICIO-SECCION CARRITO DE COMPRAS OVERLAY====================================================================================-->
+
+
+
+    <section class="carrito-compras">
+        <div class="modal-container"  id="modal_container">
+            <div class="modal">
+                <div class="car-x">
+                    <h1 class="text-carrito">Carrito de Compras</h1>
+                    <a id="close">
+                    <img src="./imagenes/x-gris.png" alt="">
+                    </a>
+                </div>
+                <div class="barra-roja"></div>
+                <div class="ordenes-comida">
+                    <div class="orden-comida">
+                        <img class="pizza-carrito" src="./imagenes/pizza.jpg" alt="">
+                        <div>
+                            <div class="porciones">
+                                <h1 class="nom-comida">Pizza</h1>
+                            </div>
+                            <h6>Fast Food</h6>
+                            <h1 class="orden-precio">$45000</h1>
+                        </div>
+                        <h1 class="por">x1</h1>
+                        <img class="x" src="./imagenes/x.png" alt="">
+                    </div>
+                </div>
+
+                <div class="confirmar-pedido">
+                    <h4>Total del carrito</h4>
+                    <div class="barra-roja"></div>
+                    <div class="total-carrito">
+                        <h1>Subtotal: </h2>
+                        <h1 class="precio">$0</h1>
+                    </div>
+                    <button class="button-confirmar">Confirmar Pedido</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--FINAL-SECCION CARRITO DE COMPRAS OVERLAY====================================================================================-->
+
+
+<!--INICIO-SECCION NAVBAR HEADER====================================================================================-->
+
+    <header>
+        <div class="container-inicial">
+            <img class="icono-correo" src="./imagenes/correo-electronico.png" alt="icono-correo">
+            <h5 class="correo-info">info@ejemplo.com</h5>
+            <img class="icono-face-head" src="./imagenes/facebook.png" alt="">
+            <img class="icono-twitter-head" src="./imagenes/twitter.png" alt="">
+            <img class="icono-insta-head" src="./imagenes/instagram.png" alt="">
+            <img class="icono-you-head" src="./imagenes/youtube.png" alt="">
+            <a href="/logout"><h5 class="login">Cerrar sesión</h5></a>
+        </div>
+        <div class="nav-bar">
+            <a href="/Iniciouser" class="logo">
+                <img src="./imagenes/Logo.png" alt="logoimg">
+            </a>
+            <nav class="links">
+                <a href="/Iniciouser" class="nav-link">Inicio</a>
+                <a href="/Blogsuser/<%- name %>" class="nav-link">Blogs</a>
+                <a href="/Restaurantesuser" class="nav-link">Restaurantes</a>
+                <ul class="menu">
+                    <li>
+                        <a href="/Blogs" class="nav-link">
+                            Paginas
+                            <img class="flecha-abajo" src="./imagenes/flecha-hacia-abajo-para-navegar.png" alt=""></img>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="">Contacto</a></li>
+                            <li><a href="">Terminos y condiciones</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="/perfil/<%- name %>">
+                    <img class="img-profile" src="/uploads/<%- img %>" alt="">
+                </a>
+                
+                <button class="button-carrito" id="open">
+                    <img class="icono-carrito" src="./imagenes/carrito-de-compras.png" alt="">
+                </button>
+                
+            </nav>
+        </div>
+    </header>
+
+<!--FINAL-SECCION NAVBAR HEADER====================================================================================-->
+
+<!--INICIO-SECCION SLIDE SHOW====================================================================================-->
+
+
+    <section class="incial-slidershow">
+        <div class="slider-frame">
+            <ul>
+                <li><img class="slider" src="./imagenes/slider1.jpg" alt=""></li>
+                <li><img class="slider" src="./imagenes/slider2.jpg" alt=""></li>
+                <li><img class="slider" src="./imagenes/slider3.jpg" alt=""></li>
+                <li><img class="slider" src="./imagenes/slider4.jpg" alt=""></li>
+            </ul>
+            
+            <img class="icono-restaurante" src="./imagenes/restaurante.png" alt="">
+            <h6 class="texto-slider5" >La Manera fácil de pedir tu comida</h6>
+            <h1 class="texto-slider">Nosotros Somos La Web <br> Definitiva Para Sus Domicilios</h1>
+            <h6 class="texto-slider2">Lorem ipsum dolor sit amet consectetur adipiscing elit velit porttitor senectus, quisque</h6>
+            <h6 class="texto-slider3">sodales torquent montes commodo nec dis mus condimentum taciti lectus.</h6>
+            <h6 class="texto-slider4">Lorem ipsum dolor sit amet consectetur adipiscing elit velit porttitor senectus.</h6>
+
+            <input class="input-inicio" type="search" id="inputSearch" placeholder="NOMBRE DEL RESTAURANTE">
+            
+            <div class="box-search">
+                <ul id="box-search" style="z-index: 999;">
+                    <% res.forEach((res)=>{%>
+                    <li><a href="/RestauranteProfileUser/<%- res.idrestaurantes %>/<%- name %>"><i class=""><%- res.name_res %></i></a></li>
+                    <%})%>
+                    
+                    <% menu.forEach((menu)=>{%>
+                    <li><a href="/RestauranteProfileUser/<%- menu.idres_menu %>/<%- name %>"><i class=""><%- menu.nombre_menu %></i></a></li>
+                    <%})%>
+                </ul>
+            </div>
+            
+            <div class="icono-buscar">
+                <img src="./imagenes/lupa.png" alt="">
+            </div>
+
+            <a href="" class="button-buscar">
+                <h6>Buscar</h6>
+            </a>
+
+            <h1 class="res-top">Restaurantes Populares</h1>
+
+            <div class="container-slidelogo">
+                <div class="slider-logo">
+                    <div class="slider2">
+                        <img src="./imagenes/logores2.png" alt="">
+                    </div>
+                    <div class="slider2">
+                        <img src="./imagenes/logores3.png" alt="">
+                    </div>
+                    <div class="slider2">
+                        <img src="./imagenes/logores4.png" alt="">
+                    </div>
+                    <div class="slider2">
+                        <img src="./imagenes/logores2.png" alt="">
+                    </div>
+                    <div class="slider2">
+                        <img src="./imagenes/logores3.png" alt="">
+                    </div>
+                    <div class="slider2">
+                        <img src="./imagenes/logores2.png" alt="">
+                    </div>
+                    <div class="slider2">
+                        <img src="./imagenes/logores4.png" alt="">
+                    </div>
+
+                    <div class="slider2">
+                        <img src="./imagenes/logores3.png" alt="">
+                    </div>
+                    <div class="slider2">
+                        <img src="./imagenes/logores3.png" alt="">
+                    </div>
+                    <div class="slider2">
+                        <img src="./imagenes/logores2.png" alt="">
+                    </div>
+                    <div class="slider2">
+                        <img src="./imagenes/logores4.png" alt="">
+                    </div>
+                    <div class="slider2">
+                        <img src="./imagenes/logores3.png" alt="">
+                    </div>
+                    <div class="slider2">
+                        <img src="./imagenes/logores2.png" alt="">
+                    </div>
+                    <div class="slider2">
+                        <img src="./imagenes/logores4.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--FINAL-SECCION SLIDE SHOW====================================================================================-->
+
+<!--INICIO-SECCION COMIDAS====================================================================================-->
+
+    <section class="top-comidas">
+        <div class="top-incontext">
+            <img class="icono-res" src="./imagenes/restaurante-negro.png" alt="">
+            <h6>Comidas Populares</h6>
+        </div>
+        <div class="text1-topcomidas">
+            <h1>Mas de </h1>
+            <h2>10.000 comidas </h2>
+            <h3>para ordenar.</h3>
+        </div>  
+        <div class="container-comidastop">
+            <div class="carta">
+                <img src="./imagenes/pizza.jpg" alt="">
+                <h1>Pizza</h1>
+                <h4>$45000</h4>
+                <h4>Lorem ipsum dolor sit</h4>
+                <button id="1" class="ordenar1">
+                    Agregar al carrito
+                </button>
+            </div>
+            <div class="carta">
+                <img src="./imagenes/hamburguesa.jpg" alt="">
+                <h1>Hamburguesa</h1>
+                <h4>$45000</h4>
+                <h4>Lorem ipsum dolor sit</h4>
+                <button id="1" class="ordenar1">
+                    Agregar al carrito
+                </button>
+            </div>
+            <div class="carta">
+                <img src="./imagenes/sushi.jpg" alt="">
+                <h1>Sushi</h1>
+                <h4>$45000</h4>
+                <h4>Lorem ipsum dolor sit</h4>
+                <button id="1" class="ordenar1">
+                    Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <div class="divbuttonco">
+            <a class="button-topco" href="">Mas articulos</a>
+        </div>
+    </section>
+
+<!--FIN-SECCION COMIDAS====================================================================================-->
+
+<!--INICIO-SECCION RESTAURANTES====================================================================================-->
+
+    <section class="top-restaurantes">
+        <img class="icono-res2" src="./imagenes/restaurante-negro.png" alt="">
+        <h6 class="restau-popu">Restaurantes Populares</h6>
+        <div class="text1-topcomidas">
+            <h1>Puedes elegir entre los </h1>
+            <h2>Restaurantes </h2>
+            <h3>mas populares.</h3>
+        </div>  
+        <div class="container-restaurantestop">
+            <div class="res-carta">
+                <img class="rescarta-img" src="./imagenes/pizza.jpg" alt="">
+                <div class="nombreres-star">
+                    <a href=""><h1 class="nombre-restext">Fast Food</h1></a>
+                    <div class="div-star-topres">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrellam.png" alt="">
+                    </div>
+                </div>
+                <h6 class="tipo-co">Tipo de comida: Hamburguesa, helado, papas fritas</h6>
+                <div class="res-imgandinfo">
+                    <a href=""><img src="./imagenes/fast-food-logo-design-free-vector.jpg" alt=""></a>
+                    <div class="res-info">
+                        <div class="res-info1">
+                            <img src="./imagenes/reloj-de-pared.png" alt="">
+                            <h6>12:30 am - 10:12 pm</h6>
+                        </div>
+                        <div class="res-info2">
+                            <img src="./imagenes/maparojo.png" alt="">
+                            <h6>Cr 18 No. 86A-14, C.P 11001</h6>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+            <div class="res-carta">
+                <img class="rescarta-img" src="./imagenes/pizza.jpg" alt="">
+                <div class="nombreres-star">
+                    <a href=""><h1 class="nombre-restext">Fast Food</h1></a>
+                    <div class="div-star-topres">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrellam.png" alt="">
+                    </div>
+                </div>
+                <h6 class="tipo-co">Tipo de comida: Hamburguesa, helado, papas fritas</h6>
+                <div class="res-imgandinfo">
+                    <a href=""><img src="./imagenes/fast-food-logo-design-free-vector.jpg" alt=""></a>
+                    <div class="res-info">
+                        <div class="res-info1">
+                            <img src="./imagenes/reloj-de-pared.png" alt="">
+                            <h6>12:30 am - 10:12 pm</h6>
+                        </div>
+                        <div class="res-info2">
+                            <img src="./imagenes/maparojo.png" alt="">
+                            <h6>Cr 18 No. 86A-14, C.P 11001</h6>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+            <div class="res-carta">
+                <img class="rescarta-img" src="./imagenes/pizza.jpg" alt="">
+                <div class="nombreres-star">
+                    <a href=""><h1 class="nombre-restext">Fast Food</h1></a>
+                    <div class="div-star-topres">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrellam.png" alt="">
+                    </div>
+                </div>
+                <h6 class="tipo-co">Tipo de comida: Hamburguesa, helado, papas fritas</h6>
+                <div class="res-imgandinfo">
+                    <a href=""><img src="./imagenes/fast-food-logo-design-free-vector.jpg" alt=""></a>
+                    <div class="res-info">
+                        <div class="res-info1">
+                            <img src="./imagenes/reloj-de-pared.png" alt="">
+                            <h6>12:30 am - 10:12 pm</h6>
+                        </div>
+                        <div class="res-info2">
+                            <img src="./imagenes/maparojo.png" alt="">
+                            <h6>Cr 18 No. 86A-14, C.P 11001</h6>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+            <div class="res-carta">
+                <img class="rescarta-img" src="./imagenes/pizza.jpg" alt="">
+                <div class="nombreres-star">
+                    <a href=""><h1 class="nombre-restext">Fast Food</h1></a>
+                    <div class="div-star-topres">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrellam.png" alt="">
+                    </div>
+                </div>
+                <h6 class="tipo-co">Tipo de comida: Hamburguesa, helado, papas fritas</h6>
+                <div class="res-imgandinfo">
+                    <a href=""><img src="./imagenes/fast-food-logo-design-free-vector.jpg" alt=""></a>
+                    <div class="res-info">
+                        <div class="res-info1">
+                            <img src="./imagenes/reloj-de-pared.png" alt="">
+                            <h6>12:30 am - 10:12 pm</h6>
+                        </div>
+                        <div class="res-info2">
+                            <img src="./imagenes/maparojo.png" alt="">
+                            <h6>Cr 18 No. 86A-14, C.P 11001</h6>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+            <div class="res-carta">
+                <img class="rescarta-img" src="./imagenes/pizza.jpg" alt="">
+                <div class="nombreres-star">
+                    <a href=""><h1 class="nombre-restext">Fast Food</h1></a>
+                    <div class="div-star-topres">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrellam.png" alt="">
+                    </div>
+                </div>
+                <h6 class="tipo-co">Tipo de comida: Hamburguesa, helado, papas fritas</h6>
+                <div class="res-imgandinfo">
+                    <a href=""><img src="./imagenes/fast-food-logo-design-free-vector.jpg" alt=""></a>
+                    <div class="res-info">
+                        <div class="res-info1">
+                            <img src="./imagenes/reloj-de-pared.png" alt="">
+                            <h6>12:30 am - 10:12 pm</h6>
+                        </div>
+                        <div class="res-info2">
+                            <img src="./imagenes/maparojo.png" alt="">
+                            <h6>Cr 18 No. 86A-14, C.P 11001</h6>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+            <div class="res-carta">
+                <img class="rescarta-img" src="./imagenes/pizza.jpg" alt="">
+                <div class="nombreres-star">
+                    <a href=""><h1 class="nombre-restext">Fast Food</h1></a>
+                    <div class="div-star-topres">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrella.png" alt="">
+                        <img src="./imagenes/estrellam.png" alt="">
+                    </div>
+                </div>
+                <h6 class="tipo-co">Tipo de comida: Hamburguesa, helado, papas fritas</h6>
+                <div class="res-imgandinfo">
+                    <a href=""><img src="./imagenes/fast-food-logo-design-free-vector.jpg" alt=""></a>
+                    <div class="res-info">
+                        <div class="res-info1">
+                            <img src="./imagenes/reloj-de-pared.png" alt="">
+                            <h6>12:30 am - 10:12 pm</h6>
+                        </div>
+                        <div class="res-info2">
+                            <img src="./imagenes/maparojo.png" alt="">
+                            <h6>Cr 18 No. 86A-14, C.P 11001</h6>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        <div class="divbuttonres">
+            <a class="button-topres" href="">Mas restaurantes</a>
+        </div>
+    </section>
+
+    <!--FIN-SECCION RESTAURANTES====================================================================================-->
+
+    <!--INICIO-SECCION COMENTARIOS=================================================================================-->
+
+    <section class="comentarios">
+        <img class="icono-res2" src="./imagenes/restaurante-negro.png" alt="">
+        <h6 class="restau-popu">Clientes Satisfechos</h6>
+        <div class="text1-topcomidas">
+            <h1>Lo que dicen nuestros </h1>
+            <h2>Clientes</h2>
+            <h3>.</h3>
+        </div>  
+        <div class="container-comentarios">
+            <div class="slider-com">
+                <div class="slides-com">
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+
+                    <div class="slide-com first">
+                        <div class="comentario1">
+                            <div class="star-com">
+                                <img src="./imagenes/estrella.png" alt="">
+                                <img src="./imagenes/estrella.png" alt="">
+                                <img src="./imagenes/estrella.png" alt="">
+                                 <img src="./imagenes/estrella.png" alt="">
+                                <img src="./imagenes/estrellam.png" alt="">
+                            </div>
+                            <h1>Gran servicio, rápido y confiable.</h1>
+                            <h6>Amo el servicio de domicilio que presta Yum, es<br> muy rapido y preciso, me encanta sus sugerencias <br>en platos y restaurantes.</h6>
+                            <div class="usuario-com">
+                                <div class="imgusuario-com">
+                                    <img src="./imagenes/usuario.jpg" alt="">
+                                </div>
+                                <div class="textuser-com">
+                                    <h6>Andres White</h6>
+                                    <h5>Cliente</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-com">
+                        <div class="comentario1">
+                            <div class="star-com">
+                                <img src="./imagenes/estrella.png" alt="">
+                                <img src="./imagenes/estrella.png" alt="">
+                                <img src="./imagenes/estrella.png" alt="">
+                                 <img src="./imagenes/estrella.png" alt="">
+                                <img src="./imagenes/estrellam.png" alt="">
+                            </div>
+                            <h1>Gran servicio, rápido y confiable.</h1>
+                            <h6>Amo el servicio de domicilio que presta Yum, es<br> muy rapido y preciso, me encanta sus sugerencias <br>en platos y restaurantes.</h6>
+                            <div class="usuario-com">
+                                <div class="imgusuario-com">
+                                    <img src="./imagenes/usuario.jpg" alt="">
+                                </div>
+                                <div class="textuser-com">
+                                    <h6>Andres White</h6>
+                                    <h5>Cliente</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-com">
+                        <div class="comentario1">
+                            <div class="star-com">
+                                <img src="./imagenes/estrella.png" alt="">
+                                <img src="./imagenes/estrella.png" alt="">
+                                <img src="./imagenes/estrella.png" alt="">
+                                 <img src="./imagenes/estrella.png" alt="">
+                                <img src="./imagenes/estrellam.png" alt="">
+                            </div>
+                            <h1>Gran servicio, rápido y confiable.</h1>
+                            <h6>Amo el servicio de domicilio que presta Yum, es<br> muy rapido y preciso, me encanta sus sugerencias <br>en platos y restaurantes.</h6>
+                            <div class="usuario-com">
+                                <div class="imgusuario-com">
+                                    <img src="./imagenes/usuario.jpg" alt="">
+                                </div>
+                                <div class="textuser-com">
+                                    <h6>Andres White</h6>
+                                    <h5>Cliente</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-com">
+                        <div class="comentario1">
+                            <div class="star-com">
+                                <img src="./imagenes/estrella.png" alt="">
+                                <img src="./imagenes/estrella.png" alt="">
+                                <img src="./imagenes/estrella.png" alt="">
+                                 <img src="./imagenes/estrella.png" alt="">
+                                <img src="./imagenes/estrellam.png" alt="">
+                            </div>
+                            <h1>Gran servicio, rápido y confiable.</h1>
+                            <h6>Amo el servicio de domicilio que presta Yum, es<br> muy rapido y preciso, me encanta sus sugerencias <br>en platos y restaurantes.</h6>
+                            <div class="usuario-com">
+                                <div class="imgusuario-com">
+                                    <img src="./imagenes/usuario.jpg" alt="">
+                                </div>
+                                <div class="textuser-com">
+                                    <h6>Andres White</h6>
+                                    <h5>Cliente</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                        <div class="auto-btn4"></div>
+                    </div>
+                </div>
+                
+                <div class="navigation-manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                    <label for="radio4" class="manual-btn"></label>
+                </div>
+            </div>
+        </div>
+    </section> 
+    
+    <!--FIN-SECCION COMENTARIOS=================================================================================-->
+
+    <!--INICIO-SECCION DE ARTICULOS==================================================================================-->
+
+    <section class="Articulos-Blogs">
+        <img class="icono-res3" src="./imagenes/restaurante-negro.png" alt="">
+        <h6 class="restau-popu">Ultimos Blogs</h6>
+        <div class="text1-topcomidas">
+            <h1>Últimos </h1>
+            <h2>Blogs </h2>
+            <h3>Y Artículos.</h3>
+        </div>  
+        <div class="container-comidastop">
+            <div class="carta-blog">
+                <img src="./imagenes/pizza.jpg" alt="">
+                <a href=""><h1 class="blog-titulo">Los platos mas populares de esta semana.</h1></a>
+                <a href=""><h6 class="blog-parrafo">Desde raviolis con espinacas y ricotta hasta farfalle con champiñones.</h6></a>
+                <div class="blog-usuario">
+                    <img src="./imagenes/usuario.jpg" alt="">
+                    <div>
+                        <h6 class="blog-name">Agustin Cebrian</h6>
+                        <h6 class="blog-fecha">Marzo 22, 2023</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="carta-blog">
+                <img src="./imagenes/pizza.jpg" alt="">
+                <h1 class="blog-titulo">Los platos mas populares de esta semana.</h1>
+                <h6 class="blog-parrafo">Desde raviolis con espinacas y ricotta hasta farfalle con champiñones.</h6>
+                <div class="blog-usuario">
+                    <img src="./imagenes/usuario.jpg" alt="">
+                    <div>
+                        <h6 class="blog-name">Agustin Cebrian</h6>
+                        <h6 class="blog-fecha">Marzo 22, 2023</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="carta-blog">
+                <img src="./imagenes/pizza.jpg" alt="">
+                <h1 class="blog-titulo">Los platos mas populares de esta semana.</h1>
+                <h6 class="blog-parrafo">Desde raviolis con espinacas y ricotta hasta farfalle con champiñones.</h6>
+                <div class="blog-usuario">
+                    <img src="./imagenes/usuario.jpg" alt="">
+                    <div>
+                        <h6 class="blog-name">Agustin Cebrian</h6>
+                        <h6 class="blog-fecha">Marzo 22, 2023</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divbuttonco1">
+            <a class="button-topco" href="">Mas blogs</a>
+        </div>
+    </section>
+
+    <!--FIN-SECCION DE ARTICULOS==================================================================================-->
+
+    <!--INICIO-SECCION FOOTER==================================================================================-->
+
+    <section>
+        <footer class="footer-inicial">
+            <div class="bar-vacia"></div>
+            <div class="footer-info">
+                <div class="footer-info1">
+                    <a href="/Iniciouser"><img src="./imagenes/Logo.png" alt=""></a>
+                    <h6>Lorem ipsum dolor sit amet <br>consectetur adipiscing elit orci <br>porttitor, mattis arcu.</h6>
+                </div>
+                <div class="footer-info2">
+                    <h1>Enlace rápido</h1>
+                    <a href=""><h6>Inicio</h6></a>
+                    <a href="/Restaurantesuser"><h6>Todos los restaurantes</h6></a>
+                    <a href=""><h6>Contacto</h6></a>
+                    <a href="/Blogsuser"><h6>Detalles del Blog</h6></a>
+                </div>
+                <div class="footer-info3">
+                    <h1>Enlace rápido 2</h1>
+                    <a href=""><h6>Términos y condiciones</h6></a>
+                    <a href=""><h6>Contacto</h6></a>
+                </div>
+                <div class="footer-info4">
+                    <h1>Contacto</h1>
+                    <div>
+                        <img src="./imagenes/maparojo.png" alt="">
+                        <h6>Tr 39 No. 57A-14, C.P 11001</h6>
+                    </div>
+                    <div>
+                        <img src="./imagenes/llamada-telefonica.png" alt="">
+                        <h6>+57 312 587 1547</h6>
+                    </div>
+                    <div>
+                        <img src="./imagenes/correo.png" alt="">
+                        <h6>info@ejemplo.com</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bar-footerinfo">
+                <div class="blogs-textcopy">
+                    <h6 class="text-redcopy">Copyright © 2023 </h6>
+                    <h6 class="text-redcopy2">Yum</h6>
+                    <h6 class="text-redcopy3">. Todos los derechos reservados.</h6>
+                </div>
+                <div class="blogs-iconosfoot">
+                    <a href=""><img class="icono-face-head" src="./imagenes/facebook.png" alt=""></a>
+                    <a href=""><img class="icono-twitter-head" src="./imagenes/twitter.png" alt=""></a>
+                    <a href=""><img class="icono-insta-head" src="./imagenes/instagram.png" alt=""></a>
+                    <a href=""><img class="icono-you-head" src="./imagenes/youtube.png" alt=""></a>
+                </div>
+            </div>
+
+        </footer>
+    </section>
+
+    
+</body>
+<script src="/js/inicio.js"></script>
+</html>

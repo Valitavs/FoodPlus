@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pagina de inicio</title>
+    <link rel="stylesheet" href="/styles/config-res.css">
+    <link rel="shorcut icon" href="/imagenes/restaurante.png" type="image/x-icon">
+</head>
+<body>
+
+<!--INICIO-SECCION NAVBAR HEADER====================================================================================-->
+    <% if (resultados) {%>
+    <header>
+            
+        <div class="container-inicial">
+            <img class="icono-correo" src="/imagenes/correo-electronico.png" alt="icono-correo">
+            <h5 class="correo-info">info@ejemplo.com</h5>
+            <img class="icono-face-head" src="/imagenes/facebook.png" alt="">
+            <img class="icono-twitter-head" src="/imagenes/twitter.png" alt="">
+            <img class="icono-insta-head" src="/imagenes/instagram.png" alt="">
+            <img class="icono-you-head" src="/imagenes/youtube.png" alt="">
+            <a href="/logout"><h5 class="login">Cerrar sesión</h5></a>
+        </div>
+        <div class="nav-bar">
+            <a href="/Pagina de inicio/" class="logo">
+                <img src="/imagenes/Logo.png" alt="logoimg">
+            </a>
+            
+            <% if (usuario) {%>
+            <nav class="links">
+                <a href="/Iniciouser" class="nav-link">Inicio</a>
+                <a href="" class="nav-link">Contacto</a>
+                <a href="/Restaurantesuser" class="nav-link">Restaurantes</a>
+                <a href="" class="nav-link">
+                    Paginas
+                    <img class="flecha-abajo" src="/imagenes/flecha-hacia-abajo-para-navegar.png" alt="">
+                </a>
+                <a href="/perfil/<%- resultados.idusuarios %>">
+                    <img class="img-profile" src="/uploads/<%- resultados.user_img %>" alt="">
+                </a>
+
+                <button class="button-carrito" id="open">
+                    <img class="icono-carrito" src="/imagenes/carrito-de-compras.png" alt="">
+                </button>
+
+            </nav>
+            <%}%>
+            
+        </div>
+    </header>
+
+    <!--FINAL-SECCION NAVBAR HEADER====================================================================================-->
+
+    <section>
+        <% if (usuario) {%>
+        <div class="container-info">
+            
+            <img class="fondo-res" src="/uploads/<%- usuario.fondo_res %>" alt="">
+            <div style="margin-left: 820px;">
+                <a class="button-elemento2" href="/Editarinfores/<%- usuario.idrestaurantes %>">Editar informacion</a>
+                <a class="button-elemento2" href="/Editarfondo/<%- usuario.idrestaurantes %>">Cambiar fondo</a>
+            </div>
+            <div class="info-res">
+                <div class="cont">
+                    <img class="perfil-res" src="/uploads/<%- usuario.icono_res %>" alt="">
+                    <div class="info2-res">
+                        <div class="iconos-res">
+                            <img src="/imagenes/facebook-res.png" alt="">
+                            <img src="/imagenes/gorjeo-res.png" alt="">
+                            <img src="/imagenes/instagram-res.png" alt="">
+                        </div>
+                        <h1><%- usuario.name_res %></h1>
+                        <div class="estrellas">
+                            <img src="/imagenes/estrella.png" alt="">
+                            <img src="/imagenes/estrella.png" alt="">
+                            <img src="/imagenes/estrella.png" alt="">
+                            <img src="/imagenes/estrella.png" alt="">
+                            <img src="/imagenes/estrellam.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="horarios">
+                    <div class="horario">
+                        <img src="/imagenes/reloj-de-pared.png" alt="">
+                        <h1><%- usuario.hora_open %> - <%- usuario.hora_close %></h1>
+                    </div>
+                    <div class="horario">
+                        <img src="/imagenes/maparojo.png" alt="">
+                        <h1><%- usuario.direccion_res %></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="contmenu">
+                <div class="menu">
+                    <h1 class="detalles">Todos los detalles</h1>
+                    <div class="linksmenu">
+                        <p data-target="#menu">Menu</p>
+                        <p data-target="#opiniones">Opiniones</p>
+                        <p data-target="#reservar">Reservar</p>
+                        <p data-target="#administrar">Administrar pedidos</p>
+                    </div>
+                </div>
+                <div class="contenidodinamico" id="contenidodinamico">
+                    <div data-content id="menu" class="active">
+                        <div class="ventanamenu">
+                            <h1 class="titlemenu">Elementos del menu</h1>
+                            <div class="contenedormenu">
+                                <% res.forEach((user)=>{%>
+                                    <div class="elemento">
+                                        <img src="/uploads/<%- user.img_menu %>" alt="">
+                                        <div class="descrip-menu">
+                                            <h1><%- user.nombre_menu %></h1>
+                                            <h2><%- user.descripcion_menu %></h1>
+                                            <h3>$<%- user.precio_menu %></h1>
+                                        </div>
+                                        <div class="button-elemento">
+                                            <a href="/edit/<%- user.idmenu %>">Editar</a>
+                                            <a href="/delete/<%- user.idmenu %>">Borrar</a>
+                                        </div>
+                                    </div>
+                                <%})%>
+                            </div>
+                            <div class="cont-button"></div>
+                            <a class="button-add" href="/Agregar/<%- usuario.idrestaurantes %>/ <%- resultados.idusuarios %>">Agregar producto</a>
+                        </div>
+                    </div>
+
+
+                    <div data-content id="opiniones">
+                        <div class="ventanamenu">
+                            <h1 class="titlemenu">Reseñas</h1>
+                            <!--<form action="" class="contenedormenu2">
+                                <div class="input-2">
+                                    <label for="descproduct" class="form-label">Reseña</label>
+                                    <textarea class="form-control" id="descproduct" rows="3" name="descripcion_menu"></textarea>
+                                </div>
+                                <a class="button-add2" href="">Enviar</a>
+                            </form>-->
+                            <div class="cont-button"></div>
+                            <% reseñas.forEach((reseña)=>{%>
+                            <div class="datosuser">
+                                <img src="/uploads/<%- reseña.imguser_reseña %>" alt="">
+                                <div class="contnombrefecha">
+                                    <div class="nomfe">
+                                        <h1><%- reseña.nombreuser_reseña %></h1>
+                                    </div>
+                                    <h2><%- reseña.reseña %></h2>
+                                </div>
+                            </div>
+                            <%})%>
+                        </div>
+                    </div>
+
+                    <div data-content id="reservar">
+                        <div class="ventanamenu">
+                            <h1 class="titlemenu">Dias para reservar</h1>
+                            <div class="cont-button"></div>
+                            <% reserva.forEach((reserva)=>{%>
+                                <%y = reserva.fecha_reserva.getFullYear()%>
+                                <%m = reserva.fecha_reserva.getMonth() + 1%>
+                                <%d = reserva.fecha_reserva.getDate()%>
+                            <table>
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>Mes</th>
+                                    <th>Año</th>
+                                    <th>Hora</th>
+                                    <th>Estado</th>
+                                    <th>Acción</th>
+                                </tr>
+                                <tr>
+                                    <td><%= d %></td>
+                                    <td><%= m %></td>
+                                    <td><%= y %></td>
+                                    <td><%- reserva.hora_reserval %></td>
+                                    <td class="estadotd"><%- reserva.estado_reserva %></td>
+                                    <td><a href=""><img src="/imagenes/cheque.png" alt=""></a></td>
+                                </tr>
+                            </table>
+                            <%})%>
+                            <a class="button-add4" href="/AgregarReserva/<%- usuario.idrestaurantes %>/ <%- resultados.idusuarios %>">Agregar dias</a>
+                        </div>
+                    </div>
+
+                    <div data-content id="administrar">
+                        <div class="ventanamenu">
+                            <h1 class="titlemenu">Administrar pedidos</h1>
+                            <div class="contenedormenu">
+                                <% restaurantes.forEach((user)=>{%>
+                                    <%var p = 0%>
+                                    <%function suma(){%>
+                                        <%p=p+1%>
+                                        <%return p%>
+                                    <%}%>
+                                    <div class="elemento2">
+                                        <img src="/uploads/<%- user.imguser_orden %>" alt="">
+                                        <div class="descrip-menu2">
+                                            <h1>Pedido <%= suma() %></h1>
+                                            <h2>informacion: <%- user.nombremenu_orden %></h1>
+                                            <h2>Direccion: <%- user.direccion_orden %></h2>
+                                            <h2>Nombre: <%- user.nombrecliente_orden %></h2>
+                                            <a href="">...</a>
+                                        </div>
+                                        <div class="button-elemento3">
+                                            <form action="/Aceptar" method="POST" enctype="multipart/form-data">
+                                                <input id="idres_menu" , name="estado" value="Aceptado" hidden>
+                                                <input id="idres_menu" , name="idres_orden" value="<%- user.idres_orden %>" hidden>
+                                                <input id="idres_menu" , name="idusuario" value="<%- name %>" hidden>
+                                                <input id="idres_menu" , name="idcarrito" value="<%- user.idcarrito_producto %>" hidden>
+                                                <button type="submit">Aceptar</button>
+                                            </form>
+                                            <form action="/Rechazar" method="POST" enctype="multipart/form-data">
+                                                <input id="idres_menu" , name="estado" value="Rechazado" hidden>
+                                                <input id="idres_menu" , name="idres_orden" value="<%- user.idres_orden %>" hidden>
+                                                <input id="idres_menu" , name="idusuario" value="<%- name %>" hidden>
+                                                <input id="idres_menu" , name="idcarrito" value="<%- user.idcarrito_producto %>" hidden>
+                                                <button type="submit">Rechazar</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                <%})%>
+                            </div>
+                            <div class="cont-button"></div>
+                            <a class="button-add3" href="/Historial">Historial</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </section>
+    <% } %>
+
+    <!--INICIO-SECCION FOOTER==================================================================================-->
+
+    <section>
+        <footer class="footer-inicial">
+            <div class="bar-vacia"></div>
+            <div class="footer-info">
+                <div class="footer-info1">
+                    <a href="/Iniciouser"><img src="/imagenes/Logo.png" alt=""></a>
+                    <h6>Lorem ipsum dolor sit amet <br>consectetur adipiscing elit orci <br>porttitor, mattis arcu.</h6>
+                </div>
+                <div class="footer-info2">
+                    <h1>Enlace rápido</h1>
+                    <a href="/Iniciouser"><h6>Inicio</h6></a>
+                    <a href="/Restaurantesuser"><h6>Todos los restaurantes</h6></a>
+                    <a href=""><h6>Contacto</h6></a>
+                    <a href="/Blogsuser"><h6>Detalles del Blog</h6></a>
+                </div>
+                <div class="footer-info3">
+                    <h1>Enlace rápido 2</h1>
+                    <a href=""><h6>Términos y condiciones</h6></a>
+                    <a href=""><h6>Contacto</h6></a>
+                </div>
+                <div class="footer-info4">
+                    <h1>Contacto</h1>
+                    <div>
+                        <img src="/imagenes/maparojo.png" alt="">
+                        <h6>Tr 39 No. 57A-14, C.P 11001</h6>
+                    </div>
+                    <div>
+                        <img src="/imagenes/llamada-telefonica.png" alt="">
+                        <h6>+57 312 587 1547</h6>
+                    </div>
+                    <div>
+                        <img src="/imagenes/correo.png" alt="">
+                        <h6>info@ejemplo.com</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bar-footerinfo">
+                <div class="blogs-textcopy">
+                    <h6 class="text-redcopy">Copyright © 2023 </h6>
+                    <h6 class="text-redcopy2">Yum</h6>
+                    <h6 class="text-redcopy3">. Todos los derechos reservados.</h6>
+                </div>
+                <div class="blogs-iconosfoot">
+                    <a href=""><img class="icono-face-head" src="/imagenes/facebook.png" alt=""></a>
+                    <a href=""><img class="icono-twitter-head" src="/imagenes/twitter.png" alt=""></a>
+                    <a href=""><img class="icono-insta-head" src="/imagenes/instagram.png" alt=""></a>
+                    <a href=""><img class="icono-you-head" src="/imagenes/youtube.png" alt=""></a>
+                </div>
+            </div>
+
+        </footer>
+    </section>
+
+</body>
+<script src="/js/config-res.js"></script>
+</html>

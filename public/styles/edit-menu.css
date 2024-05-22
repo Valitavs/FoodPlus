@@ -1,0 +1,122 @@
+@font-face{
+    font-family: Inter-Thin;
+    src: url(/static/Inter-Thin.ttf);
+}
+@font-face{
+    font-family: Inter-Regular;
+    src: url(/static/Inter-Regular.ttf);
+}
+@font-face{
+    font-family: Inter-Medium;
+    src: url(/static/Inter-Medium.ttf);
+}
+@font-face{
+    font-family: Inter-Light;
+    src: url(/static/Inter-Light.ttf);
+}
+@font-face{
+    font-family: Inter-Bold;
+    src: url(/static/Inter-Bold.ttf);
+}
+@font-face{
+    font-family: Inter-SemiBold;
+    src: url(/static/Inter-SemiBold.ttf);
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-add{
+    display: flex;
+    flex-direction: column;
+    border-top: 2px solid #D92525;
+    width: 600px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+}
+.forminfo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0px;
+}
+
+.input-1{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-1 label{
+    font-family: Inter-Medium;
+}
+
+.input-1 input{
+    width: 446px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #b4b3b3a7;
+    outline: none;
+}
+
+.input-2{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-2 textarea{
+    width: 446px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #b4b3b3a7;
+    outline: none;
+}
+
+.input-2 label{
+    font-family: Inter-Medium;
+}
+
+.agregar-menu{
+    background-color: #D92525;
+    padding: 10px;
+    color: #fff;
+    font-family: Inter-Medium !important;
+    border-radius: 5px;
+    width: 150px;
+    border: none;
+}
+
+.title-x{
+    display: flex;
+    align-items: center;
+
+}
+
+
+.title-x h1{
+    padding: 10px 0px 0px 35px;
+    font-family: Inter-Regular;
+    font-size: 25px;
+    text-align: left;
+    margin: 0;
+}
+
+.cerrar{
+    background-color: #D92525;
+    font-family: Inter-Regular;
+    text-decoration: none;
+    padding: 10px;
+    color: #fff;
+    font-family: Inter-Medium !important;
+    border-radius: 5px;
+    width: 40px;
+    font-size: 13px;
+}

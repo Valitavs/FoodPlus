@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/edit-menu.css">
+    <title>Document</title>
+</head>
+<body>
+    <% if (usuario) {%>
+    <div class="section-add">
+        <div class="title-x">
+            <h1>Editar información</h1>
+        </div>
+        <form class="forminfo" action="/updateinfouser" method="POST" enctype="multipart/form-data">
+            <input id="idusuarios", name="idusuarios" value="<%=usuario.idusuarios %>" hidden>
+            <div class="input-1">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="user_nombre">
+            </div>
+            <div class="input-1">
+                <label for="correo" class="form-label">Correo</label>
+                <input type="email" class="form-control" id="correo" name="user_correo">
+            </div>
+            <div class="input-1">
+                <label for="direccion" class="form-label">Direccion</label>
+                <input type="text" class="form-control" id="direccion" name="user_direccion">
+            </div>
+            <div class="input-1">
+                <label for="Telefono" class="form-label">Telefono</label>
+                <input type="text" class="form-control" id="Telefono" name="user_telefono">
+            </div>
+            <div class="input-1">
+                <label for="image">Imagen de perfil</label>
+                <input type="file" id="image" name="image">
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="agregar-menu" type="submit">Guardar cambios</button>
+                <a class="cerrar" href="/perfil/<%=usuario.idusuarios %>">Cerrar</a>
+            </div>
+            
+        </form>
+    </div>
+    <% } %>
+</body>
+</html>

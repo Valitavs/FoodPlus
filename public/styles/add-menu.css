@@ -1,0 +1,83 @@
+.agregar-menu{
+    background-color: #D92525;
+    padding: 10px;
+    color: #fff;
+    font-family: Inter-Medium !important;
+    border-radius: 5px;
+    width: 150px;
+    border: none;
+}
+
+.section-add{
+    display: flex;
+    border-top: 2px solid #D92525;
+}
+.forminfo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0px;
+}
+
+.input-1{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-1 label{
+    font-family: Inter-Medium;
+}
+
+.input-1 input{
+    width: 446px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #b4b3b3a7;
+    outline: none;
+}
+
+.input-2{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-2 textarea{
+    width: 446px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #b4b3b3a7;
+    outline: none;
+}
+
+.input-2 label{
+    font-family: Inter-Medium;
+}
+
+.title-x{
+    display: flex;
+    align-items: center;
+
+}
+
+
+.title-x h1{
+    padding: 10px 0px 0px 35px;
+    font-family: Inter-Regular;
+    font-size: 25px;
+    text-align: left;
+    margin: 0;
+}
+
+.cerrar{
+    background-color: #D92525;
+    font-family: Inter-Regular;
+    text-decoration: none;
+    padding: 10px;
+    color: #fff;
+    font-family: Inter-Medium !important;
+    border-radius: 5px;
+    width: 40px;
+    font-size: 13px;
+}

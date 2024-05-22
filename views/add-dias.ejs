@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/edit-menu.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <% if (res) {%>
+    <% if (user) {%>
+    <div class="section-add">
+        <div class="title-x">
+            <h1>Agregar dias disponibles</h1>
+        </div>
+        <form class="forminfo" action="/Agregardias" method="POST" enctype="multipart/form-data">
+            <input id="idres_menu", name="idres" value="<%- res.idrestaurantes %>" hidden>
+            <input id="iduser_menu", name="iduser" value="<%- user.idusuarios %>" hidden>
+            <input id="iduser_menu", name="estado" value="Disponible" hidden>
+            <div class="input-1">
+                <label for="nombreproduct" class="form-label"></label>
+                <input type="date" class="form-control" id="fechahora" name="fecha">
+            </div>
+            <div class="input-1">
+                <label for="nombreproduct" class="form-label"></label>
+                <input type="time" class="form-control" id="fechahora" name="hora">
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="agregar-menu" type="submit">Agregar</button>
+                <a class="cerrar" href="/Restaurante">Cerrar</a>
+            </div>
+        </form>
+    </div>
+    <% } %>
+    <% } %>
+</body>
+
+</html>
