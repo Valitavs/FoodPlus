@@ -3,12 +3,14 @@ const mysql = require('mysql')
 
 const conexion = mysql.createConnection({
     multipleStatements: true,
-    host: process.env.BD_HOST || "localhost",
-    port: process.env.BD_PORT || 3306,
-    user: process.env.BD_USER || "root",
-    password: process.env.BD_PASSWORD || "coco1033",
-    database: process.env.BD_NAME || 'bd_foodplus'
+    host: process.env.BD_HOST,
+    port: process.env.BD_PORT,
+    user: process.env.BD_USER,
+    password: process.env.BD_PASSWORD,
+    database: process.env.BD_NAME
 })
+
+console.log(process.env.BD_HOST)
 
 conexion.connect((error)=>{
     if(error){
