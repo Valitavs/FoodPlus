@@ -1,11 +1,17 @@
+const express = require('express')
 const mysql = require('mysql')
+const DB = require('../config')
+
 const conexion = mysql.createConnection({
     multipleStatements: true,
-    host:3306,
-    user: 'root',
-    password: 'coco1033',
-    database: 'bd_foodplus'
+    host: DB.BD_HOST,
+    port: DB.BD_PORT,
+    user: DB.BD_USER,
+    password: DB.BD_PASSWORD,
+    database: DB.BD_NAME
 })
+
+console.log(DB.BD_HOST)
 
 conexion.connect((error)=>{
     if(error){
