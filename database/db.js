@@ -10,8 +10,6 @@ const conexion = mysql.createConnection({
     database: process.env.BD_NAME
 })
 
-console.log(DB.BD_HOST, DB.BD_PORT, DB.BD_USER)
-
 conexion.connect((error)=>{
     if(error){
         console.log('Error de conexion ',+ error)
