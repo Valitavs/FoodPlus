@@ -11,7 +11,7 @@ const conexion = mysql.createConnection({
     database: DB.BD_NAME
 })
 
-console.log(DB.BD_HOST)
+console.log(DB.BD_HOST, DB.BD_PORT, DB.BD_USER)
 
 conexion.connect((error)=>{
     if(error){
