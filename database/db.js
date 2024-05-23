@@ -2,10 +2,16 @@ const express = require('express')
 require("dotenv").config();
 const mysql = require('mysql')
 
-const urlDB = `mysql://${process.env.MYSQLUSER}:${process.env.MYSQLPASSWORD}@${process.env.MYSQLHOST}:${process.env.MYSQLPORT}/${process.env.MYSQLDATABASE}`
+const conexion = mysql.createConnection({
+    multipleStatements: true,
+    host: process.env.BD_HOST,
+    port: process.env.BD_PORT,
+    user: process.env.BD_USER,
+    password: process.env.BD_PASSWORD,
+    database: process.env.BD_NAME
+})
 
-const conexion = mysql.createConnection(urlDB)
-
+console.log(process.env.BD_HOST, process.env.BD_PORT, process.env.BD_USER, process.env.BD_PASSWORD, process.env.BD_NAME)
 
 conexion.connect((error)=>{
     if(error){
