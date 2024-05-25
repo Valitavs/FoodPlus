@@ -27,7 +27,7 @@ body{
 .imagen-over .imagen{
     width: 60vw;
     height: 100vh;
-    background-image: url(/Imagenes/pexels-karolina-grabowska-7283717.jpg);
+    background-image: url(/imagenes/pexels-karolina-grabowska-7283717.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
