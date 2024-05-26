@@ -493,13 +493,14 @@ router.post("/updateinfores", upload.single("image"),(req,res)=>{
 
 router.post("/updatefondores", upload.single("image"),(req,res)=>{
     const id = req.body.idrestaurantes
+    const iduser = req.body.iduser
     const fondo_res = req.file.filename
 
     conexion.query('UPDATE restaurantes SET ? WHERE idrestaurantes =?', [{fondo_res:fondo_res, fondofecha_res:Date.now()}, id], (error,results)=>{
         if(error){
             console.log(error)
         }else{
-            res.redirect('/Restaurante/'+id)
+            res.redirect('/Restaurante/%20'+id+"%20"+iduser)
         }
     })
 })
