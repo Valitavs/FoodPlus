@@ -500,7 +500,7 @@ router.post("/updatefondores", upload.single("image"),(req,res)=>{
         if(error){
             console.log(error)
         }else{
-            res.redirect('/Restaurante/%20'+id+"%20"+iduser)
+            res.redirect('/Restaurante/%20'+id+"/%20"+iduser)
         }
     })
 })
