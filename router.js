@@ -243,7 +243,7 @@ router.get('/Addres/:idusuarios',(req,res)=>{
         if(error){
             throw error
         }else{
-            res.render('Add-res.ejs',{usuario:results[0]})
+            res.render('add-res.ejs',{usuario:results[0]})
         }
     })
 })
