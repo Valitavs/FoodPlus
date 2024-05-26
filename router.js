@@ -237,7 +237,7 @@ router.get('/Registro',(req,res)=>{
     res.render('registro')
 })
 
-router.get('/Add-res/:idusuarios',(req,res)=>{
+router.get('/Addres/:idusuarios',(req,res)=>{
     const idusuarios = req.params.idusuarios
     conexion.query('SELECT * FROM usuarios WHERE idusuarios =?',[idusuarios], (error,results)=>{
         if(error){
